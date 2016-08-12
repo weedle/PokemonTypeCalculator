@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.sentinel.hearke.pokemoninfo.MainActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="115dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Select a usage"
+                android:id="@+id/lblInfo"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Retrieve Info"
+                android:id="@+id/btnCalculate"
+                android:onClick="retrieveInfo"
+                android:layout_below="@+id/lblInfo"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/lblInfo"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Defending (1 Type)"
+                    android:id="@+id/radType1"
+                    android:layout_below="@+id/lblInfo"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Defending (2 Types)"
+                    android:id="@+id/radType2"
+                    android:layout_below="@+id/radType1"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Attack"
+                    android:id="@+id/radAttack"
+                    android:layout_below="@+id/radType2"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:checked="false" />
+            </RadioGroup>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Normal"
+                android:id="@+id/chkNormal"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:checked="false"
+                android:onClick="chkClicked"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fire"
+                android:id="@+id/chkFire"
+                android:checked="false"
+                android:layout_below="@+id/chkNormal"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:onClick="chkClicked"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Water"
+                android:id="@+id/chkWater"
+                android:layout_below="@+id/chkFire"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:checked="false"
+                android:onClick="chkClicked"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Electric"
+                android:id="@+id/chkElectric"
+                android:layout_below="@+id/chkWater"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:checked="false"
+                android:onClick="chkClicked"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Grass"
+                android:id="@+id/chkGrass"
+                android:layout_below="@+id/chkElectric"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:checked="false"
+                android:onClick="chkClicked"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ice"
+                android:id="@+id/chkIce"
+                android:layout_below="@+id/chkGrass"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:checked="false"
+                android:onClick="chkClicked"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fighting"
+                android:id="@+id/chkFighting"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/chkNormal"
+                android:layout_toEndOf="@+id/chkNormal"
+                android:checked="false"
+                android:onClick="chkClicked"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Poison"
+                android:id="@+id/chkPoison"
+                android:layout_above="@+id/chkWater"
+                android:layout_toRightOf="@+id/chkNormal"
+                android:layout_toEndOf="@+id/chkNormal"
+                android:checked="false"
+                android:onClick="chkClicked"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ground"
+                android:id="@+id/chkGround"
+                android:layout_alignTop="@+id/chkWater"
+                android:layout_alignLeft="@+id/chkPoison"
+                android:layout_alignStart="@+id/chkPoison"
+                android:checked="false"
+                android:onClick="chkClicked"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Flying"
+                android:id="@+id/chkFlying"
+                android:layout_below="@+id/chkWater"
+                android:layout_toRightOf="@+id/chkElectric"
+                android:layout_toEndOf="@+id/chkElectric"
+                android:checked="false"
+                android:onClick="chkClicked"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Psychic"
+                android:id="@+id/chkPsychic"
+                android:layout_alignTop="@+id/chkGrass"
+                android:layout_alignLeft="@+id/chkFlying"
+                android:layout_alignStart="@+id/chkFlying"
+                android:checked="false"
+                android:onClick="chkClicked"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bug"
+                android:id="@+id/chkBug"
+                android:layout_below="@+id/chkPsychic"
+                android:layout_alignLeft="@+id/chkPsychic"
+                android:layout_alignStart="@+id/chkPsychic"
+                android:checked="false"
+                android:onClick="chkClicked"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rock"
+                android:id="@+id/chkRock"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/chkFighting"
+                android:layout_toEndOf="@+id/chkFighting"
+                android:checked="false"
+                android:onClick="chkClicked"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ghost"
+                android:id="@+id/chkGhost"
+                android:layout_alignTop="@+id/chkPoison"
+                android:layout_toRightOf="@+id/chkFighting"
+                android:layout_toEndOf="@+id/chkFighting"
+                android:checked="false"
+                android:onClick="chkClicked"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dragon"
+                android:id="@+id/chkDragon"
+                android:layout_below="@+id/chkGhost"
+                android:layout_toRightOf="@+id/chkFighting"
+                android:layout_toEndOf="@+id/chkFighting"
+                android:checked="false"
+                android:onClick="chkClicked"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dark"
+                android:id="@+id/chkDark"
+                android:layout_below="@+id/chkGround"
+                android:layout_toRightOf="@+id/chkFighting"
+                android:layout_toEndOf="@+id/chkFighting"
+                android:checked="false"
+                android:onClick="chkClicked"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Steel"
+                android:id="@+id/chkSteel"
+                android:layout_alignTop="@+id/chkPsychic"
+                android:layout_toRightOf="@+id/chkFighting"
+                android:layout_toEndOf="@+id/chkFighting"
+                android:checked="false"
+                android:onClick="chkClicked"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fairy"
+                android:id="@+id/chkFairy"
+                android:layout_alignBottom="@+id/chkBug"
+                android:layout_toRightOf="@+id/chkFighting"
+                android:layout_toEndOf="@+id/chkFighting"
+                android:checked="false"
+                android:onClick="chkClicked"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/txtInfo"
+                android:layout_marginTop="47dp"
+                android:layout_below="@+id/chkIce"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>
